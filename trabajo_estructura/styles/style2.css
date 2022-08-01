@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    font-size: 2rem;
+    text-align: center;
+    border: solid 1px;
+    margin: 0 4em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* grid-template-rows: 0.5fr repeat(4, 2fr) 100px; */
+    grid-template-areas:
+        "nav nav nav nav"
+        "main main main aside"
+        "main main main aside"
+        "article1 article2 article3 aside"
+        "gallery gallery gallery ."
+        "footer footer footer footer"
+    ;
+
+    gap: .5em .4em;
+}
+
+.item1 {
+    grid-area: nav;
+    /* background: greenyellow; */
+}
+
+.item2 {
+    grid-area: main;
+    position: relative;
+    color:white;
+
+    /* background: lightcoral; */
+}
+
+.item3 {
+    grid-area: aside;
+    background: lightgoldenrodyellow;
+}
+
+.item4 {
+    grid-area: article1;
+   /*  background: lightgreen; */
+}
+
+.item5 {
+    grid-area: article2;
+  /*  background: lightskyblue; */
+}
+
+.item6 {
+    grid-area: article3;
+  /*  background: lightgray; */
+}
+
+.item7 {
+    grid-area: gallery;
+    background: hotpink;
+}
+
+.item8 {
+    grid-area: footer;
+    background: khaki;
+    font-size: 14px;
+}
+
+.art{
+    max-width: 100%;
+}
+
+.head{
+    max-width: 50%;
+}
+.img_main {
+    border: 5px solid #c4d9b0;
+    max-width: 100%;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    margin: 10px
+}
+
+article{
+    font-size: medium;
+}
+
+.section{
+    color:blue;
+}
+
+.texto_medio{
+    font-size: medium;
+}
+
+/* media queries*/
+
+@media screen and (max-width: 720px) {
+
+    .head {
+            max-width: 100%;
+        }
+    .grid-container {
+        border: solid 0px;
+        grid-template-columns: 1fr;
+        /*grid-template-rows: 50px 200px repeat(3, 0.5fr) 100px 100px;*/
+        grid-template-areas:
+            "nav"
+            "main"
+            "article1"
+            "article2"
+            "article3"
+            "gallery"
+            "aside"
+            "footer"
+        ;
+    }
+
+}
